@@ -33,7 +33,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
+      /*drawer: Drawer(
         child: ListView(
           children: [
             DrawerHeader(
@@ -91,7 +91,7 @@ class _DashboardState extends State<Dashboard> {
             )
           ],
         ),
-      ),
+      ),*/
       appBar: AppBar(
         title: Row(
           children: [
