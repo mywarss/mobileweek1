@@ -12,11 +12,11 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   var data;
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    print('hello');
+    print("Hello");
     callAPI();
   }
 
@@ -33,84 +33,93 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            DrawerHeader(
-              decoration:
-                  BoxDecoration(color: Color.fromRGBO(211, 211, 211, 100)),
-              child: Text(
-                'Menu',
-                style: TextStyle(
-                  fontSize: 28,
-                  color: pColor,
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: sColor,
+                ),
+                child: Text(
+                  'Menu ',
+                  style: TextStyle(
+                    fontSize: 28,
+                    color: Colors.blue,
+                  ),
                 ),
               ),
-            ),
-            ListTile(
-              onTap: () {
-                Navigator.pushNamed(context, 'Video');
-              },
-              title: Text(
-                'Video',
-                style: TextStyle(fontSize: 18),
+              ListTile(
+                onTap: () {
+                  print("Menu Video");
+                  Navigator.pushNamed(context, 'Video');
+                },
+                title: Text(
+                  'Video',
+                  style: TextStyle(
+                    fontSize: 24,
+                  ),
+                ),
+                leading: Icon(
+                  Icons.video_call,
+                  color: Colors.amber,
+                  size: 36,
+                ),
               ),
-              leading: Icon(
-                Icons.video_call,
-                color: Colors.grey,
-                size: 36,
+              ListTile(
+                title: Text(
+                  'Image',
+                  style: TextStyle(
+                    fontSize: 24,
+                  ),
+                ),
+                leading: Icon(
+                  Icons.image,
+                  color: Colors.green,
+                  size: 36,
+                ),
+                onTap: () {
+                  print('Menu Image');
+                  Navigator.pushNamed(context, 'Image');
+                },
               ),
-            ),
-            ListTile(
-              onTap: () {
-                Navigator.pushNamed(context, 'Image');
-              },
-              title: Text(
-                'Image',
-                style: TextStyle(fontSize: 18),
+              ListTile(
+                onTap: () {
+                  print('Menu Location');
+                  Navigator.pushNamed(context, 'Location');
+                },
+                title: Text(
+                  'Location',
+                  style: TextStyle(
+                    fontSize: 24,
+                  ),
+                ),
+                leading: Icon(
+                  Icons.gps_fixed,
+                  color: Colors.pink,
+                  size: 36,
+                ),
               ),
-              leading: Icon(
-                Icons.image,
-                color: Colors.grey,
-                size: 30,
-              ),
-            ),
-            ListTile(
-              onTap: () {
-                Navigator.pushNamed(context, 'Location');
-              },
-              title: Text(
-                'Location',
-                style: TextStyle(fontSize: 18),
-              ),
-              leading: Icon(
-                Icons.gps_fixed_rounded,
-                color: Colors.grey,
-                size: 30,
-              ),
-            )
-          ],
+            ],
+          ),
         ),
-      ),
-      appBar: AppBar(
-        title: Row(
-          children: [
-            Icon(Icons.api),
-            SizedBox(width: 10),
-            Text('Dashboard'),
-          ],
+        appBar: AppBar(
+          title: Row(
+            children: [
+              Icon(Icons.api),
+              SizedBox(width: 10),
+              Text('Dashboard'),
+            ],
+          ),
         ),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Text(data?.activity ?? "Loading.."),
-            Text(data?.type ?? ""),
-            Text('${data?.price ?? ''}'),
-            Text('${data?.participants ?? ''}'),
-          ],
-        ),
-      ),
-    );
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Text(data?.activity ?? "loading.."),
+              Text(data?.type ?? ''),
+              Text('${data?.price ?? ""}'),
+              Text('${data?.participants ?? ""}'),
+            ],
+          ),
+        ));
   }
 }

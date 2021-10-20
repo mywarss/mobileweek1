@@ -67,7 +67,7 @@ class Index extends StatelessWidget {
                     style: TextStyle(fontSize: 16),
                   ),
                   onPressed: () {
-                    print("Hello ");
+                    print("Hello World");
                     Navigator.pushNamed(context, 'Register');
                   },
                 ),
