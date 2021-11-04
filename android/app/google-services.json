@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "528299680829",
+    "project_id": "tctkmutnb-505f5",
+    "firebase_url": "https://tctkmutnb-505f5-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "storage_bucket": "tctkmutnb-505f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:528299680829:android:b03985049f9df2900cb654",
+        "android_client_info": {
+          "package_name": "com.example.mobileappweek1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "528299680829-s2pas5ormk7sj872c0ge7blr6uci5u1j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAA8WxDXhtZJiu9jdSa9hDCUKsCK4ursU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "528299680829-s2pas5ormk7sj872c0ge7blr6uci5u1j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:mobileappweek1/config/constant.dart';
@@ -28,6 +29,11 @@ class _DashboardState extends State<Dashboard> {
     setState(() {
       data = tctFromJson(response.body);
     });
+  }
+
+  Future<void> logout() async {
+    await FirebaseAuth.instance.signOut();
+    print("true");
   }
 
   @override
@@ -85,7 +91,7 @@ class _DashboardState extends State<Dashboard> {
               ListTile(
                 onTap: () {
                   print('Menu Location');
-                  Navigator.pushNamed(context, "Location");
+                  Navigator.pushNamed(context, 'Location');
                 },
                 title: Text(
                   'Location',
@@ -96,6 +102,41 @@ class _DashboardState extends State<Dashboard> {
                 leading: Icon(
                   Icons.gps_fixed,
                   color: Colors.pink,
+                  size: 36,
+                ),
+              ),
+              ListTile(
+                onTap: () {
+                  print('Menu Store');
+                  Navigator.pushNamed(context, 'Store');
+                },
+                title: Text(
+                  'Store',
+                  style: TextStyle(
+                    fontSize: 24,
+                  ),
+                ),
+                leading: Icon(
+                  Icons.store,
+                  color: Colors.purple,
+                  size: 36,
+                ),
+              ),
+              ListTile(
+                onTap: () {
+                  logout();
+                  Navigator.of(context).pop();
+                  Navigator.pushNamed(context, 'Index', arguments: []);
+                },
+                title: Text(
+                  'Log out',
+                  style: TextStyle(
+                    fontSize: 24,
+                  ),
+                ),
+                leading: Icon(
+                  Icons.logout,
+                  color: Colors.blue,
                   size: 36,
                 ),
               ),
